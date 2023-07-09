@@ -5,10 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     var uname: String? = null
@@ -32,34 +28,37 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         signInBtn.setOnClickListener {
-            uname = userText.text.toString()
-            pname = passText.text.toString()
-            if (!uname.isNullOrEmpty() && !pname.isNullOrEmpty()) {
-                try {
-                    val fIn = openFileInput(file)
-                    val mfile = InputStreamReader(fIn)
-                    val br = BufferedReader(mfile)
-                    var line = br.readLine()
-                    while (line != null){
-                        var userItem = line.split(",")
-                        if(userItem[0]==uname && userItem[1]==pname) {
-                            Toast.makeText(applicationContext,"Login Success", Toast.LENGTH_SHORT).show()
+//            uname = userText.text.toString()
+//            pname = passText.text.toString()
+//            if (!uname.isNullOrEmpty() && !pname.isNullOrEmpty()) {
+//                try {
+//                    val fIn = openFileInput(file)
+//                    val mfile = InputStreamReader(fIn)
+//                    val br = BufferedReader(mfile)
+//                    var line = br.readLine()
+//                    while (line != null){
+//                        var userItem = line.split(",")
+//                        if(userItem[0]==uname && userItem[1]==pname) {
+//                            Toast.makeText(applicationContext,"Login Success", Toast.LENGTH_SHORT).show()
+//
+////                            val intent = Intent(this, UserListActivity::class.java)
+////                            startActivity(intent)
+//                        }
+//                        line = br.readLine()
+//                    }
+//                    br.close()
+//                    mfile.close()
+//                    fIn.close()
+//                }
+//                catch (e: Exception){
+//                    e.printStackTrace()
+//                }
+//
+//
+//            }
 
-//                            val intent = Intent(this, UserListActivity::class.java)
-//                            startActivity(intent)
-                        }
-                        line = br.readLine()
-                    }
-                    br.close()
-                    mfile.close()
-                    fIn.close()
-                }
-                catch (e: Exception){
-                    e.printStackTrace()
-                }
-
-
-            }
+            val intent = Intent(this, Drawer::class.java)
+            startActivity(intent)
         }
         cancelBtn.setOnClickListener {
             userText.text = null

@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
 //                    e.printStackTrace()
 //                }
 //
-//
 //            }
 
             val intent = Intent(this, Drawer::class.java)

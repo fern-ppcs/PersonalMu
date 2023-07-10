@@ -26,60 +26,40 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-
-        val randomBtn = findViewById<Button>(R.id.randomBtn)
         val addBtn = findViewById<Button>(R.id.addBtn)
 
-        latText = findViewById(R.id.latText)
-        lonText = findViewById(R.id.lonText)
-        userSignText = findViewById(R.id.userSignText)
-        passSignText = findViewById(R.id.passSignText)
 
-        randomBtn.setOnClickListener {
-            latText.setText(randomLocation(true).toString())
-            lonText.setText(randomLocation(false).toString())
-        }
         addBtn.setOnClickListener {
-            saveData()
-            val intent = Intent(this, MainActivity::class.java)
+//            saveData()
+            val intent = Intent(this, Question::class.java)
             startActivity(intent)
         }
     }
 
-    private fun randomLocation(type: Boolean): Double {
-        val r = Random()
-        var result: Double
-        //true: latitude, false: longitude
-        if (type) {
-            result = (r.nextInt(170) - 85).toDouble()
-        } else {
-            result = (r.nextInt(360) - 180).toDouble()
-        }
-        return result
-    }
 
-    private fun saveData() {
-        val usr = userSignText.text.toString()
-        val pwd = passSignText.text.toString()
-        val lat = latText.text.toString().toDouble()
-        val lon = lonText.text.toString().toDouble()
-        Log.d("Debug", usr)
-        if (usr.isEmpty()) {
-            userSignText.error = "Please enter a username"
-            return
-        }
 
-        val userId = usr
-        val userData = User(usr, pwd, lat, lon) //user object
-        val  line = userData.username + "," + userData.password + "," + userData.latitude + "," + userData.longitude + "\n"
-
-        try {
-            val fOut = openFileOutput(file, Context.MODE_APPEND)
-            fOut.write(line.toByteArray())
-            fOut.close()
-            Toast.makeText(applicationContext,"Data saved successfully", Toast.LENGTH_SHORT).show()
-        }catch (e: Exception){
-            e.printStackTrace()
-        }
-    }
+//    private fun saveData() {
+//        val usr = userSignText.text.toString()
+//        val pwd = passSignText.text.toString()
+//        val lat = latText.text.toString().toDouble()
+//        val lon = lonText.text.toString().toDouble()
+//        Log.d("Debug", usr)
+//        if (usr.isEmpty()) {
+//            userSignText.error = "Please enter a username"
+//            return
+//        }
+//
+//        val userId = usr
+//        val userData = User(usr, pwd, lat, lon) //user object
+//        val  line = userData.username + "," + userData.password + "," + userData.latitude + "," + userData.longitude + "\n"
+//
+//        try {
+//            val fOut = openFileOutput(file, Context.MODE_APPEND)
+//            fOut.write(line.toByteArray())
+//            fOut.close()
+//            Toast.makeText(applicationContext,"Data saved successfully", Toast.LENGTH_SHORT).show()
+//        }catch (e: Exception){
+//            e.printStackTrace()
+//        }
+//    }
 }

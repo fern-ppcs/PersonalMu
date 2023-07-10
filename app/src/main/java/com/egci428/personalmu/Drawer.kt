@@ -27,14 +27,14 @@ class Drawer: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListen
         if (savedInstanceState == null) {
 //            supportFragmentManager.beginTransaction()
 //                .replace(R.id.fragment_container, HomeFragment()).commit()
-            navigationView.setCheckedItem(R.id.nav_home)
+            navigationView.setCheckedItem(R.id.nav_Color)
         }
     }
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.nav_home -> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
-            R.id.nav_message -> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
-            R.id.nav_sync -> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
+            R.id.nav_Color -> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
+            R.id.nav_lucky-> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
+            R.id.nav_camera -> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
 
         }
         drawerLayout.closeDrawer(GravityCompat.START)

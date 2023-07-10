@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
     <item
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_Color"
         android:icon="@drawable/ic_android_black_24dp"
-        android:title="Home"/>
+        android:title="Today's Color"/>
     <item
-        android:id="@+id/nav_message"
+        android:id="@+id/nav_lucky"
         android:icon="@drawable/ic_android_black_24dp"
-        android:title="Message"/>
+        android:title="Lucky Draw"/>
     <item
-        android:id="@+id/nav_sync"
+        android:id="@+id/nav_camera"
         android:icon="@drawable/ic_android_black_24dp"
-        android:title="Sync"/>
+        android:title="Check tone"/>
 
 </menu>

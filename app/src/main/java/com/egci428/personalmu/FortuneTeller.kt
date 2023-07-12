@@ -1,6 +1,7 @@
 package com.egci428.personalmu
 
 import android.content.Context
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageButton
 import android.widget.TextView
 import com.google.gson.GsonBuilder
 import okhttp3.Call
@@ -32,6 +34,11 @@ class FortuneTeller : AppCompatActivity(), SensorEventListener {
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         lastUpdate = System.currentTimeMillis()
+
+        val closeBtn = findViewById<ImageButton>(R.id.closeBtn)
+        closeBtn.setOnClickListener {
+            finish()
+        }
     }
 
 

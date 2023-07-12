@@ -47,7 +47,7 @@ class Camera: AppCompatActivity() {
 
         closeBtn.setOnClickListener {
             val colorIntent = Intent(this, Drawer::class.java)
-            startActivity(colorIntent)
+            finish()
         }
     }
 

@@ -5,15 +5,15 @@
     tools:showIn="navigation_view">
     <item
         android:id="@+id/nav_Color"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@drawable/pang"
         android:title="Today's Color"/>
     <item
         android:id="@+id/nav_lucky"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@drawable/pang"
         android:title="Lucky Draw"/>
     <item
         android:id="@+id/nav_camera"
-        android:icon="@drawable/ic_android_black_24dp"
+        android:icon="@drawable/pang"
         android:title="Check tone"/>
 
 </menu>

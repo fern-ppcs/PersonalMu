@@ -6,19 +6,75 @@
     android:layout_height="match_parent"
     android:background="#ECE2C7">
 
-    <CheckBox
-        android:id="@+id/purple"
-        android:layout_width="wrap_content"
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
         android:fontFamily="casual"
-        android:text="Purple"
+        android:text="What color is your vein on the wrist?"
+        android:textColor="#705F3F"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="350dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:orientation='horizontal'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/green"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+        <RadioButton
+            android:id="@+id/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="casual"
+            android:text="Green"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="187dp" />
+
+        <RadioButton
+            android:id="@+id/purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="casual"
+            android:text="Purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/green"
+            tools:layout_editor_absoluteY="185dp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:fontFamily="casual"
+        android:text="Skin color after being exposed to the sun?"
+        android:textColor="#705F3F"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <TextView
         android:id="@+id/textView5"
@@ -52,80 +108,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="casual"
-        android:text="What color is your vein on the wrist?"
-        android:textColor="#705F3F"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <CheckBox
-        android:id="@+id/green"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="casual"
-        android:text="Green"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:fontFamily="casual"
-        android:text="Skin color after being exposed to the sun?"
-        android:textColor="#705F3F"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:orientation='horizontal'
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/purple" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
 
-    <CheckBox
-        android:id="@+id/dark"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="casual"
-        android:text="Dark Skin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        <RadioButton
+            android:id="@+id/dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="casual"
+            android:text="Dark Skin"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="298dp" />
 
-    <CheckBox
-        android:id="@+id/red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="30dp"
-        android:fontFamily="casual"
-        android:text="Reddish Skin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/dark"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        <RadioButton
+            android:id="@+id/red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="casual"
+            android:text="Reddish Skin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/dark"
+            tools:layout_editor_absoluteY="296dp" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:fontFamily="casual"
         android:text="Does gold or Silver jewellery suit you the best?"
@@ -134,41 +159,55 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/red" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
-    <CheckBox
-        android:id="@+id/gold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="casual"
-        android:text="Better with gold"
+        android:layout_marginEnd="30dp"
+        android:orientation='horizontal'
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11">
 
-    <CheckBox
-        android:id="@+id/silver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="casual"
-        android:text="Better with silver"
-        app:layout_constraintStart_toEndOf="@+id/gold"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        <RadioButton
+            android:id="@+id/gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="casual"
+            android:text="Better with gold"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="408dp" />
+
+        <RadioButton
+            android:id="@+id/silver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="casual"
+            android:text="Better with silver"
+            app:layout_constraintStart_toEndOf="@+id/gold"
+            tools:layout_editor_absoluteY="406dp" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/submitBtn"
         android:layout_width="131dp"
         android:layout_height="55dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="30dp"
         android:backgroundTint="#21285E"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/silver" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup3"
+        app:layout_constraintVertical_bias="0.453" />
 </androidx.constraintlayout.widget.ConstraintLayout>

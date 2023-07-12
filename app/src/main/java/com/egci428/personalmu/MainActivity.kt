@@ -5,13 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 class MainActivity : AppCompatActivity() {
     var uname: String? = null
     var pname: String? = null
-//    var userprofile: User? = null
 
-    private  val file = "users.txt"
+    private val file = "users.txt"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,43 +30,44 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         signInBtn.setOnClickListener {
-//            uname = userText.text.toString()
-//            pname = passText.text.toString()
-//            if (!uname.isNullOrEmpty() && !pname.isNullOrEmpty()) {
-//                try {
-//                    val fIn = openFileInput(file)
-//                    val mfile = InputStreamReader(fIn)
-//                    val br = BufferedReader(mfile)
-//                    var line = br.readLine()
-//                    while (line != null){
-//                        var userItem = line.split(",")
-//                        if(userItem[0]==uname && userItem[1]==pname) {
-//                            Toast.makeText(applicationContext,"Login Success", Toast.LENGTH_SHORT).show()
-//
-////                            val intent = Intent(this, UserListActivity::class.java)
-////                            startActivity(intent)
-//                        }
-//                        line = br.readLine()
-//                    }
-//                    br.close()
-//                    mfile.close()
-//                    fIn.close()
-//                }
-//                catch (e: Exception){
-//                    e.printStackTrace()
-//                }
-//
-//            }
+            uname = userText.text.toString()
+            pname = passText.text.toString()
+            if (!uname.isNullOrEmpty() && !pname.isNullOrEmpty()) {
+                var loginSuccessful = false  // Flag to track login success
+                try {
+                    val fIn = openFileInput(file)
+                    val mfile = InputStreamReader(fIn)
+                    val br = BufferedReader(mfile)
+                    var line = br.readLine()
+                    while (line != null) {
+                        val userItem = line.split(",")
+                        if (userItem[0] == uname && userItem[1] == pname) {
+                            loginSuccessful = true  // Set the flag to true
+                            val dataToSend = if (line.contains("Warm")) 0 else 1
+                            Toast.makeText(applicationContext, "Login Success", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, Drawer::class.java)
+                            intent.putExtra("dataToSend", dataToSend)
+                            startActivity(intent)
+                            break  // Exit the loop when login is successful
+                        }
+                        line = br.readLine()
+                    }
+                    br.close()
+                    mfile.close()
+                    fIn.close()
 
-            val intent = Intent(this, Drawer::class.java)
-            startActivity(intent)
+                    if (!loginSuccessful) {
+                        // Show error message if login was not successful
+                        Toast.makeText(applicationContext, "User name or password is incorrect", Toast.LENGTH_SHORT).show()
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
         }
         cancelBtn.setOnClickListener {
             userText.text = null
             passText.text = null
-
-
         }
     }
-
 }

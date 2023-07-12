@@ -1,5 +1,6 @@
 package com.egci428.personalmu
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,10 +16,8 @@ import java.util.*
 
 class SignUpActivity : AppCompatActivity() {
 
-    private val file = "users.txt"
+    //private val file = "users.txt"
     //lateinit var usrList: MutableList<User>
-    lateinit var latText: EditText
-    lateinit var lonText: EditText
     lateinit var userSignText: EditText
     lateinit var passSignText: EditText
 
@@ -27,39 +26,18 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         val addBtn = findViewById<Button>(R.id.addBtn)
-
+        userSignText = findViewById(R.id.editText)
+        passSignText = findViewById(R.id.editText2)
 
         addBtn.setOnClickListener {
-//            saveData()
             val intent = Intent(this, Question::class.java)
+            intent.putExtra("user",userSignText.text.toString())
+            intent.putExtra("pw", passSignText.text.toString())
             startActivity(intent)
+
+            Log.d("user",userSignText.text.toString())
+            Log.d("upass",passSignText.text.toString())
         }
     }
 
-
-
-//    private fun saveData() {
-//        val usr = userSignText.text.toString()
-//        val pwd = passSignText.text.toString()
-//        val lat = latText.text.toString().toDouble()
-//        val lon = lonText.text.toString().toDouble()
-//        Log.d("Debug", usr)
-//        if (usr.isEmpty()) {
-//            userSignText.error = "Please enter a username"
-//            return
-//        }
-//
-//        val userId = usr
-//        val userData = User(usr, pwd, lat, lon) //user object
-//        val  line = userData.username + "," + userData.password + "," + userData.latitude + "," + userData.longitude + "\n"
-//
-//        try {
-//            val fOut = openFileOutput(file, Context.MODE_APPEND)
-//            fOut.write(line.toByteArray())
-//            fOut.close()
-//            Toast.makeText(applicationContext,"Data saved successfully", Toast.LENGTH_SHORT).show()
-//        }catch (e: Exception){
-//            e.printStackTrace()
-//        }
-//    }
 }

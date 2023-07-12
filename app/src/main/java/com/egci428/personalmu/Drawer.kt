@@ -54,9 +54,8 @@ class Drawer: AppCompatActivity(), NavigationView.OnNavigationItemSelectedListen
                 Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
             }
             R.id.nav_lucky-> {
-//                val fortuneIntent = Intent(this, FortuneTeller::class.java)
-//                startActivity(fortuneIntent)
-
+                val fortuneIntent = Intent(this, FortuneTeller::class.java)
+                startActivity(fortuneIntent)
                 Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
             }
             R.id.nav_camera -> {
